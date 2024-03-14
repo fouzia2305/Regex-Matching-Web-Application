@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Regex Matching Web Application</title>
+    <body style="background-color: black; color: white;" >
+    
+    </title>
+   
+</head>
+<body>
+    <div class="container">
+        <h1>Regex Matcher</h1>
+        <form action="/outcome" method="POST">
+            <div style="display: flex; flex-direction: column">
+          
+                Test String<input type="text" name="test_string" id="test_string" style="padding: 10px;width: 100%; max-width: 500px"placeholder="Enter test string"><br>
+                <button type="button" onclick="document.getElementById('test_string' ).value = ''"style="width: 120px; background-color: green">Clear Test String</button>
+                <br>
+                Regex <input type="text" name="regex"style="padding: 10px;width: 100%; max-width: 500px;"placeholder="Enter Regex"><br>
+                <input type="submit" value="Submit" style="width: 120px; background-color: green">
+                
+            </div>
+        </form>
+
+
+        <h2>Matches Found</h2>
+        
+        <ul>
+        {% for match  in regex_matches%}
+            <li>{{ match}}</li>
+        {% endfor %}
+        </ul>
+        <h2>Email Validation</h2>
+        
+        <form action='/validate_email'method='POST'>
+            <div style="display: flex; flex-direction: column">
+                Email Address: <input type='text' name='email'style="padding: 10px;width: 100%; max-width: 500px;"placeholder="Enter email address"><br>
+            </div>
+            <button type='submit'>Validate Email</button>
+        </form>
+    </div>
+
+    
+    
+    
+
+</body>
+</html>
